@@ -45,10 +45,13 @@
 
 - **Python 3.11+**
 - Утилита `adb` (Android Debug Bridge)
+
+Установка системных утилит:
 ```bash
-sudo apt install adb fastboot
+sudo apt update && sudo apt install -y adb fastboot
 ```
 
+Настройка виртуального окружения и зависимостей:
 ```bash
 python -m venv .venv
 source .venv/bin/activate

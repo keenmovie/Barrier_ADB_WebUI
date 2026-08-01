@@ -45,10 +45,13 @@ Sie können die neueste Version direkt als ZIP-Archiv herunterladen oder über G
 
 - **Python 3.11+**
 - `adb` (Android Debug Bridge) Werkzeug
+
+Systemabhängigkeiten installieren:
 ```bash
-sudo apt install adb fastboot
+sudo apt update && sudo apt install -y adb fastboot
 ```
 
+Virtuelle Umgebung & Abhängigkeiten:
 ```bash
 python -m venv .venv
 source .venv/bin/activate

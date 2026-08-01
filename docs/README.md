@@ -45,10 +45,13 @@ You can download the latest version directly as a ZIP archive or clone it using 
 
 - **Python 3.11+**
 - `adb` (Android Debug Bridge) utility
+
+Install system dependencies:
 ```bash
-sudo apt install adb fastboot
+sudo apt update && sudo apt install -y adb fastboot
 ```
 
+Setup Virtual Environment & Install requirements:
 ```bash
 python -m venv .venv
 source .venv/bin/activate

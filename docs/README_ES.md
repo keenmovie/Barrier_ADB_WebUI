@@ -21,7 +21,7 @@ Interfaz web sencilla para gestionar una barrera a través de un dispositivo And
 
 ## 📥 Descargar código fuente
 
-Puede descargar la última версиóп directamente en un archivo ZIP o clonar el repositorio mediante Git:
+Puede descargar la última versión directamente en un archivo ZIP o clonar el repositorio mediante Git:
 
 - [📦 **Descargar archivo ZIP**](https://github.com/keenmovie/Barrier_ADB_WebUI/archive/refs/heads/main.zip)
 - **Clonar con Git:**
@@ -45,10 +45,13 @@ Puede descargar la última версиóп directamente en un archivo ZIP o clona
 
 - **Python 3.11+**
 - Herramienta `adb` (Android Debug Bridge)
+
+Instalar dependencias del sistema:
 ```bash
-sudo apt install adb fastboot
+sudo apt update && sudo apt install -y adb fastboot
 ```
 
+Entorno virtual e instalación:
 ```bash
 python -m venv .venv
 source .venv/bin/activate

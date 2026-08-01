@@ -26,7 +26,7 @@ You can download the latest version directly as a ZIP archive or clone it using 
 - [📦 **Download ZIP Archive**](https://github.com/keenmovie/Barrier_ADB_WebUI/archive/refs/heads/main.zip)
 - **Git Clone:**
   ```bash
-  git clone [https://github.com/keenmovie/Barrier_ADB_WebUI.git](https://github.com/keenmovie/Barrier_ADB_WebUI.git)
+  git clone https://github.com/keenmovie/Barrier_ADB_WebUI.git
   ```
 
 ---

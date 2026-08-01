@@ -151,3 +151,15 @@ adb connect <PHONE_IP>:5555
 
 - **AI Notice:** The codebase was generated and optimized with AI assistance. The software is provided "AS IS".
 - **Limitation of Liability:** This project is intended solely for personal and educational use. The author accepts no liability for any consequences arising from software usage. See [DISCLAIMER.md](DISCLAIMER.md) for full details.
+
+---
+
+## 💖 Support the Project / Поддержать проект
+
+If this project helped you, you can support its development:  
+Если проект оказался вам полезен, вы можете поддержать автора:
+
+- [☕ **DonationAlerts** (Карты РФ / СНГ)](https://www.donationalerts.com/r/keenmovie)
+- 💎 **USDT (TRC-20):** `TTq5LFaCfJiptzPimcJqhADq7HphJn5gzp`
+
+Thank you for your support! / Спасибо за вашу поддержку!

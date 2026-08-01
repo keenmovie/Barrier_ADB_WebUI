@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="page-card" style="max-width: 520px; margin: 0 auto;">
+    <h2 class="section-header">{{ _('login') }}</h2>
+    <form method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <div class="mb-3">
+            <label for="username" class="form-label">{{ _('username') }}</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="username" name="username" required>
+                <button type="button" class="btn btn-outline-secondary" id="pasteCredsBtn">{{ _('copy') }}</button>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">{{ _('password') }}</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="remember" name="remember">
+            <label class="form-check-label" for="remember">{{ _('remember_me') }}</label>
+        </div>
+        <button type="submit" class="btn btn-primary">{{ _('login') }}</button>
+    </form>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const pasteCredsBtn = document.getElementById('pasteCredsBtn');
+    if (!pasteCredsBtn) return;
+        pasteCredsBtn.addEventListener('click', function () {
+        navigator.clipboard.readText().then(text => {
+            const lines = text.split('\n');
+            lines.forEach(line => {
+                if (line.includes('Username:')) {
+                    document.getElementById('username').value = line.split('Username:')[1].trim();
+                } else if (line.includes('Password:')) {
+                    document.getElementById('password').value = line.split('Password:')[1].trim();
+                }
+            });
+        }).catch(() => {
+            alert('{{ _('clipboard_no_access') }}');
+        });
+    });
+});
+</script>
+{% endblock %}

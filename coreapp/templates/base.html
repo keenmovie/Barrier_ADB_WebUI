@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="{{ g.lang if g.lang else 'en' }}">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{{ custom_text('brand') or _('brand') }}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Language" content="{{ g.lang if g.lang else 'en' }}">
+    <meta name="google-site-verification" content="KDn_Z7m7iDojNPsR7KwnPYCKjYDqoeESu6bgeyKxnoo" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        :root {
+            color-scheme: {{ theme.color_scheme }};
+            --bg-color: {{ theme.colors['--bg-color'] }};
+            --card-bg: {{ theme.colors['--card-bg'] }};
+            --surface-bg: {{ theme.colors['--surface-bg'] }};
+            --text-color: {{ theme.colors['--text-color'] }};
+            --muted-color: {{ theme.colors['--muted-color'] }};
+            --border-color: {{ theme.colors['--border-color'] }};
+            --accent-color: {{ theme.colors['--accent-color'] }};
+            --accent-strong: {{ theme.colors['--accent-strong'] }};
+            --btn-bg: {{ site_settings.button_color|default(theme.colors['--btn-bg']) }};
+            --btn-text: {{ site_settings.button_text_color|default(theme.colors['--btn-text']) }};
+            --shadow-soft: {{ theme.colors['--shadow-soft'] }};
+            --navbar-bg: {{ theme.colors['--navbar-bg'] }};
+            --navbar-border: {{ theme.colors['--navbar-border'] }};
+            --logo-color: {{ site_settings.logo_color|default(theme.colors['--logo-color']) }};
+        }
+    </style>
+</head>
+<body class="{% block body_class %}{% endblock %}">
+    <nav class="navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ url_for('index') }}" style="color: var(--logo-color);">{{ site_settings.brand_text|default(custom_text('brand') or _('brand')) }}</a>
+        <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation" id="navbarToggle">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapsed" id="navbarContent">
+            <ul class="navbar-nav ms-auto align-items-center">
+                    {% if logged_in %}
+                    <li class="nav-item me-2">
+                        <span class="nav-link text-muted px-3">{{ session.username }}</span>
+                    </li>
+                    {% if admin %}
+                    <li class="nav-item me-2">
+                        <a class="nav-link px-3" href="{{ url_for('admin_panel') }}">{{ _('admin_panel') }}</a>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary btn-sm text-white px-4" href="{{ url_for('logout') }}">{{ _('logout') }}</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary btn-sm text-white px-4" href="{{ url_for('login') }}">{{ _('login') }}</a>
+                    </li>
+                    {% endif %}
+                </ul>
+        </div>
+    </div>
+</nav>
+<main class="content-wrapper">
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }} border border-{{ category }} rounded" role="alert">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </div>
+</main>
+
+<footer>
+        <div class="container footer-bar">
+            {{ _('copyright') }} {{ current_year }}
+        </div>
+</footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbarToggle = document.getElementById('navbarToggle');
+            const navbarContent = document.getElementById('navbarContent');
+            if (navbarToggle && navbarContent) {
+                navbarToggle.addEventListener('click', () => {
+                    const expanded = navbarToggle.getAttribute('aria-expanded') === 'true';
+                    navbarToggle.setAttribute('aria-expanded', String(!expanded));
+                    navbarContent.classList.toggle('collapsed');
+                });
+            }
+        });
+    </script>
+    <script>
+        // Set a cookie with the user's preferred color scheme so the server-side
+        // rendering can pick the correct theme when 'auto' mode is selected.
+        (function () {
+            try {
+                if (document.cookie.indexOf('prefers_color_scheme=') !== -1) return;
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var value = prefersDark ? 'dark' : 'light';
+                // set cookie for 1 hour
+                document.cookie = 'prefers_color_scheme=' + value + '; path=/; max-age=' + (60*60) + '; samesite=Lax';
+                // reload once so server can pick up the preference
+                if (!sessionStorage.getItem('prefers_color_scheme_reloaded')) {
+                    sessionStorage.setItem('prefers_color_scheme_reloaded', '1');
+                    location.reload();
+                }
+            } catch (e) {
+                // ignore
+            }
+        })();
+    </script>
+</body>
+</html>

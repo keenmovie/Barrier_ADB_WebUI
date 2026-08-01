@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ _('adb_commands') }}{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">{{ _('adb_commands') }}</h2>
+<form method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <div class="mb-3">
+        <label for="password" class="form-label">{{ _('password') }}</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+    <div class="mb-3">
+        <label for="command" class="form-label">{{ _('enter_adb_command') }}</label>
+        <input type="text" class="form-control" id="command" name="command" placeholder="{{ _('devices_placeholder') }}" required>
+    </div>
+    <button type="submit" class="btn btn-primary">{{ _('run') }}</button>
+</form>
+{% if output %}
+<div class="mt-3">
+    <h5>{{ _('result') }}</h5>
+    <pre>{{ output }}</pre>
+</div>
+{% endif %}
+{% endblock %}

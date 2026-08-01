@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ _('admin_panel') }}{% endblock %}
+
+{% block content %}
+<div class="page-card">
+    <div class="panel-actions">
+        <div>
+            <h2 class="section-header" style="margin:0;">{{ _('admin_panel') }}</h2>
+            <p class="text-muted">{{ _('manage_users_adb') }}</p>
+        </div>
+        <div class="hero-actions" style="justify-content:flex-end; gap:0.75rem;">
+            <a class="btn btn-success" href="{{ url_for('add_site_user') }}">{{ _('add_user') }}</a>
+            <a class="btn btn-warning" href="{{ url_for('webadb_access') }}">{{ _('adb_commands') }}</a>
+        </div>
+    </div>
+
+    <h3>{{ _('web_users') }}</h3>
+    <table class="table">
+        <thead>
+            <tr><th>ID</th><th>{{ _('username') }}</th><th>{{ _('role') }}</th><th>{{ _('created') }}</th><th>{{ _('expires') }}</th><th>{{ _('actions') }}</th></tr>
+        </thead>
+        <tbody>
+        {% for u in users %}
+            <tr>
+                <td>{{ u[0] }}</td>
+                <td>{{ u[1] }}</td>
+                <td>{{ u[2] }}</td>
+                <td>{{ u[3] }}</td>
+                <td>{{ u[4] or 'never' }}</td>
+                <td>
+                    {% if u[1] != 'admin' %}
+                    <div class="btn-group btn-group-sm" role="group">
+                        <a href="{{ url_for('reset_site_user_password', user_id=u[0]) }}" class="btn btn-info">🔑 {{ _('reset_password') }}</a>
+                        <form method="post" action="{{ url_for('delete_site_user', user_id=u[0]) }}" style="display:inline;">
+                            <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('{{ _('confirm_delete') }}')">{{ _('delete') }}</button>
+                        </form>
+                    </div>
+                    {% else %}
+                    <span class="text-muted">{{ _('protected') }}</span>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

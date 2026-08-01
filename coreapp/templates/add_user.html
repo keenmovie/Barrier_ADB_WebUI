@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block title %}Add user{% endblock %}
+
+{% block content %}
+<div class="page-card">
+    <h2 class="section-header">{{ _('add_user') }}</h2>
+
+    {% if credentials %}
+    <div class="alert alert-success alert-dismissible" role="alert">
+    <h4 class="alert-heading">✓ {{ _('add_user') }}!</h4>
+    <hr>
+    <p><strong>{{ _('username') }}:</strong> <code id="credUsername">{{ credentials.username }}</code></p>
+    <p><strong>{{ _('password') }}:</strong> <code id="credPassword">{{ credentials.password }}</code></p>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-primary" id="copyCredsBtn">📋 {{ _('copy') }}</button>
+        <a href="{{ url_for('admin_panel') }}" class="btn btn-secondary">{{ _('return_to_panel') }}</a>
+    </div>
+    <button type="button" class="btn-close" aria-label="Close"></button>
+</div>
+{% endif %}
+
+    <form method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <div class="mb-3">
+        <label for="username" class="form-label">{{ _('username') }}</label>
+        <input type="text" class="form-control" id="username" name="username" required>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">{{ _('password') }}</label>
+        <div class="input-group">
+            <input type="password" class="form-control" id="password" name="password" required>
+            <button type="button" class="btn btn-outline-secondary" id="generateBtn">{{ _('generate') }}</button>
+            <button type="button" class="btn btn-outline-secondary" id="togglePasswordBtn">{{ _('show') }}</button>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="role" class="form-label">{{ _('role') }}</label>
+        <select class="form-select" id="role" name="role">
+            <option value="user" selected>User</option>
+            <option value="admin">Administrator</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="days" class="form-label">{{ _('validity_period') }}</label>
+        <input type="number" class="form-control" id="days" name="days" value="0" min="0">
+    </div>
+    <button type="submit" class="btn btn-primary">{{ _('add') }}</button>
+</form>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    function generatePassword(length = 8) {
+        const charset = 'abcdefghijklmnopqrstuvwxyz0123456789';
+        let password = '';
+        for (let i = 0; i < length; i++) {
+            password += charset.charAt(Math.floor(Math.random() * charset.length));
+        }
+        return password;
+    }
+
+    const TEXT_HIDE = "{{ _('hide') }}";
+    const TEXT_SHOW = "{{ _('show') }}";
+    const TEXT_COPIED = "{{ _('copied_success') }}";
+
+    const generateBtn = document.getElementById('generateBtn');
+    if (generateBtn) {
+        generateBtn.addEventListener('click', function () {
+            const password = generatePassword();
+            const passwordInput = document.getElementById('password');
+            passwordInput.value = password;
+            passwordInput.type = 'text';
+            const toggleBtn = document.getElementById('togglePasswordBtn');
+            if (toggleBtn) toggleBtn.textContent = TEXT_HIDE;
+        });
+    }
+
+    const toggleBtn = document.getElementById('togglePasswordBtn');
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', function () {
+            const passwordInput = document.getElementById('password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                this.textContent = TEXT_HIDE;
+            } else {
+                passwordInput.type = 'password';
+                this.textContent = TEXT_SHOW;
+            }
+        });
+    }
+
+    const copyCredsBtn = document.getElementById('copyCredsBtn');
+    if (copyCredsBtn) {
+        copyCredsBtn.addEventListener('click', function () {
+            const username = document.getElementById('credUsername').textContent;
+            const password = document.getElementById('credPassword').textContent;
+            const credentialsText = `Username: ${username}\nPassword: ${password}`;
+            navigator.clipboard.writeText(credentialsText).then(() => {
+                const original = copyCredsBtn.textContent;
+                copyCredsBtn.textContent = TEXT_COPIED;
+                setTimeout(() => {
+                    copyCredsBtn.textContent = original;
+                }, 2000);
+            }).catch(() => {
+                alert('{{ _('clipboard_copy_error') }}');
+            });
+        });
+    }
+});
+</script>
+{% endblock %}

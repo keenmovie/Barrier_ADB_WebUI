@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Main{% endblock %}
+
+{% block body_class %}homepage{% endblock %}
+
+{% block content %}
+<div class="page-card hero-card">
+    <h1 class="hero-title">{{ site_settings.hero_text|default(custom_text('hero_title') or _('hero_title')) }}</h1>
+    {% if logged_in %}
+    <div class="hero-actions">
+        <form method="post" action="{{ url_for('open_barrier') }}" style="width:100%;">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <button type="submit" class="btn btn-success btn-lg w-100" style="min-height: 120px; font-size: 2rem; background-color: var(--btn-bg); color: var(--btn-text); border-color: var(--btn-bg);">{{ site_settings.button_text|default(custom_text('button_text') or _('open_barrier')) }}</button>
+        </form>
+    </div>
+    <p class="text-muted mt-4">{{ _('barrier_wait') }}</p>
+    {% else %}
+    <p class="text-muted">{{ _('please_login') }}</p>
+    <a class="btn btn-primary btn-lg mt-3" href="{{ url_for('login') }}">{{ _('login') }}</a>
+    {% endif %}
+</div>
+{% endblock %}

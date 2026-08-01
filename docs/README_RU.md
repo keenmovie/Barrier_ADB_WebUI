@@ -1,6 +1,6 @@
 <p align="center">
   <a href="../README.md">🇬🇧 English</a> •
-  <a href="README_RU.md">🇷🇺 Русский</a> •
+  <b>🇷🇺 Русский</b> •
   <a href="README_ES.md">🇪🇸 Español</a> •
   <a href="README_FR.md">🇫🇷 Français</a> •
   <a href="README_DE.md">🇩🇪 Deutsch</a>
@@ -9,13 +9,25 @@
 # 🚪 Barrier ADB WebUI
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Android_ADB-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android ADB">
-  <img src="https://img.shields.io/badge/WireGuard-88171A?style=for-the-badge&logo=wireguard&logoColor=white" alt="WireGuard">
-  <img src="https://img.shields.io/badge/License-GPLv3-blue?style=for-the-badge" alt="License GPLv3">
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"></a>
+  <a href="https://developer.android.com/tools/adb"><img src="https://img.shields.io/badge/Android_ADB-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android ADB"></a>
+  <a href="https://www.wireguard.com/"><img src="https://img.shields.io/badge/WireGuard-88171A?style=for-the-badge&logo=wireguard&logoColor=white" alt="WireGuard"></a>
+  <a href="../LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue?style=for-the-badge" alt="License GPLv3"></a>
 </p>
 
 Простой и удобный веб-интерфейс для управления шлагбаумом через Android-устройство по протоколу ADB.
+
+---
+
+## 📥 Скачать исходный код
+
+Вы можете скачать свежую версию напрямую в виде ZIP-архива или склонировать репозиторий через Git:
+
+- [📦 **Скачать ZIP-архив**](https://github.com/keenmovie/Barrier_ADB_WebUI/archive/refs/heads/main.zip)
+- **Клонирование через Git:**
+  ```bash
+  git clone [https://github.com/keenmovie/Barrier_ADB_WebUI.git](https://github.com/keenmovie/Barrier_ADB_WebUI.git)
+  ```
 
 ---
 
@@ -79,13 +91,16 @@ cd "$(dirname "$0")"
 exec .venv/bin/python -m coreapp.webapp
 ```
 
-Сделайте его исполняемым: `chmod +x start.sh`
+Сделайте его исполняемым:
+```bash
+chmod +x start.sh
+```
 
 ---
 
 ### 2. Настройка службы Systemd
 
-Создайте файл `/etc/systemd/system/barrier-adb-webui.service`. Служба вызывает **исключительно** ваш файл `start.sh`:
+Создайте файл `/etc/systemd/system/barrier-adb-webui.service`:
 
 ```ini
 [Unit]
@@ -124,18 +139,12 @@ adb connect <IP_телефона>:5555
 > ⚠️ **Примечание (При перезапуске телефона):**
 > Если телефон перезагрузился, сетевой режим ADB отключается. 
 > 1. Подключите телефон по USB-шнуру к серверу.
-> 2. Выполните команду:
->    ```bash
->    adb tcpip 5555
->    ```
-> 3. Отключите USB-шнур и повторно подключитесь по сети:
->    ```bash
->    adb connect <IP_телефона>:5555
->    ```
+> 2. Выполните команду: `adb tcpip 5555`
+> 3. Отключите USB-шнур и повторно подключитесь по сети: `adb connect <IP_телефона>:5555`
 
 ---
 
 ## ⚠️ Отказ от ответственности (Disclaimer)
 
 - **AI Notice:** Код проекта создан и оптимизирован с использованием ИИ. Программное обеспечение предоставляется «как есть» (AS IS).
-- **Ограничение ответственности:** Проект предназначен исключительно для личного и учебного использования. Автор **не несёт ответственности** за любые последствия использования ПО (звонки, управление устройством, несанкционированный доступ или противоправные действия). Вся ответственность лежит на пользователе. Подробнее см. в [DISCLAIMER.md](../DISCLAIMER.md).
+- **Ограничение ответственности:** Проект предназначен исключительно для личного и учебного использования. Автор не несёт ответственности за любые последствия использования ПО. Подробнее см. в [DISCLAIMER.md](../DISCLAIMER.md).

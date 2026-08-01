@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="README.md">🇬🇧 English</a> •
+  <b>🇬🇧 English</b> •
   <a href="docs/README_RU.md">🇷🇺 Русский</a> •
   <a href="docs/README_ES.md">🇪🇸 Español</a> •
   <a href="docs/README_FR.md">🇫🇷 Français</a> •
@@ -9,13 +9,25 @@
 # 🚪 Barrier ADB WebUI
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Android_ADB-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android ADB">
-  <img src="https://img.shields.io/badge/WireGuard-88171A?style=for-the-badge&logo=wireguard&logoColor=white" alt="WireGuard">
-  <img src="https://img.shields.io/badge/License-GPLv3-blue?style=for-the-badge" alt="License GPLv3">
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"></a>
+  <a href="https://developer.android.com/tools/adb"><img src="https://img.shields.io/badge/Android_ADB-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android ADB"></a>
+  <a href="https://www.wireguard.com/"><img src="https://img.shields.io/badge/WireGuard-88171A?style=for-the-badge&logo=wireguard&logoColor=white" alt="WireGuard"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue?style=for-the-badge" alt="License GPLv3"></a>
 </p>
 
 A simple and convenient web interface for controlling a parking barrier via an Android device using the ADB protocol.
+
+---
+
+## 📥 Download Source Code
+
+You can download the latest version directly as a ZIP archive or clone it using Git:
+
+- [📦 **Download ZIP Archive**](https://github.com/keenmovie/Barrier_ADB_WebUI/archive/refs/heads/main.zip)
+- **Git Clone:**
+  ```bash
+  git clone [https://github.com/keenmovie/Barrier_ADB_WebUI.git](https://github.com/keenmovie/Barrier_ADB_WebUI.git)
+  ```
 
 ---
 
@@ -79,13 +91,16 @@ cd "$(dirname "$0")"
 exec .venv/bin/python -m coreapp.webapp
 ```
 
-Make it executable: `chmod +x start.sh`
+Make it executable:
+```bash
+chmod +x start.sh
+```
 
 ---
 
 ### 2. Systemd Service Setup
 
-Create `/etc/systemd/system/barrier-adb-webui.service`. The service **only** executes your `start.sh` file:
+Create `/etc/systemd/system/barrier-adb-webui.service`:
 
 ```ini
 [Unit]
@@ -124,18 +139,12 @@ adb connect <PHONE_IP>:5555
 > ⚠️ **Note (When phone reboots):**
 > If the phone reboots, network ADB mode is disabled.
 > 1. Connect the phone to the server via USB cable.
-> 2. Run:
->    ```bash
->    adb tcpip 5555
->    ```
-> 3. Disconnect the USB cable and reconnect over network:
->    ```bash
->    adb connect <PHONE_IP>:5555
->    ```
+> 2. Run: `adb tcpip 5555`
+> 3. Disconnect the USB cable and reconnect over network: `adb connect <PHONE_IP>:5555`
 
 ---
 
 ## ⚠️ Legal Disclaimer
 
 - **AI Notice:** The codebase was generated and optimized with AI assistance. The software is provided "AS IS".
-- **Limitation of Liability:** This project is intended solely for personal and educational use. The author **accepts no liability** for any consequences arising from software usage (calls, device control, unauthorized access, or unlawful acts). All responsibility lies with the user. See [DISCLAIMER.md](DISCLAIMER.md) for full details.
+- **Limitation of Liability:** This project is intended solely for personal and educational use. The author accepts no liability for any consequences arising from software usage. See [DISCLAIMER.md](DISCLAIMER.md) for full details.

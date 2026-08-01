@@ -3,19 +3,31 @@
   <a href="README_RU.md">🇷🇺 Русский</a> •
   <a href="README_ES.md">🇪🇸 Español</a> •
   <a href="README_FR.md">🇫🇷 Français</a> •
-  <a href="README_DE.md">🇩🇪 Deutsch</a>
+  <b>🇩🇪 Deutsch</b>
 </p>
 
 # 🚪 Barrier ADB WebUI
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Android_ADB-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android ADB">
-  <img src="https://img.shields.io/badge/WireGuard-88171A?style=for-the-badge&logo=wireguard&logoColor=white" alt="WireGuard">
-  <img src="https://img.shields.io/badge/License-GPLv3-blue?style=for-the-badge" alt="License GPLv3">
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"></a>
+  <a href="https://developer.android.com/tools/adb"><img src="https://img.shields.io/badge/Android_ADB-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android ADB"></a>
+  <a href="https://www.wireguard.com/"><img src="https://img.shields.io/badge/WireGuard-88171A?style=for-the-badge&logo=wireguard&logoColor=white" alt="WireGuard"></a>
+  <a href="../LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue?style=for-the-badge" alt="License GPLv3"></a>
 </p>
 
 Einfache Weboberfläche zur Steuerung einer Schranke über ein Android-Gerät via ADB.
+
+---
+
+## 📥 Quellcode herunterladen
+
+Sie können die neueste Version direkt als ZIP-Archiv herunterladen oder über Git klonen:
+
+- [📦 **ZIP-Archiv herunterladen**](https://github.com/keenmovie/Barrier_ADB_WebUI/archive/refs/heads/main.zip)
+- **Mit Git klonen:**
+  ```bash
+  git clone [https://github.com/keenmovie/Barrier_ADB_WebUI.git](https://github.com/keenmovie/Barrier_ADB_WebUI.git)
+  ```
 
 ---
 
@@ -79,7 +91,10 @@ cd "$(dirname "$0")"
 exec .venv/bin/python -m coreapp.webapp
 ```
 
-Ausführbar machen: `chmod +x start.sh`
+Ausführbar machen:
+```bash
+chmod +x start.sh
+```
 
 ---
 

@@ -2,20 +2,32 @@
   <a href="../README.md">🇬🇧 English</a> •
   <a href="README_RU.md">🇷🇺 Русский</a> •
   <a href="README_ES.md">🇪🇸 Español</a> •
-  <a href="README_FR.md">🇫🇷 Français</a> •
+  <b>🇫🇷 Français</b> •
   <a href="README_DE.md">🇩🇪 Deutsch</a>
 </p>
 
 # 🚪 Barrier ADB WebUI
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Android_ADB-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android ADB">
-  <img src="https://img.shields.io/badge/WireGuard-88171A?style=for-the-badge&logo=wireguard&logoColor=white" alt="WireGuard">
-  <img src="https://img.shields.io/badge/License-GPLv3-blue?style=for-the-badge" alt="License GPLv3">
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"></a>
+  <a href="https://developer.android.com/tools/adb"><img src="https://img.shields.io/badge/Android_ADB-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android ADB"></a>
+  <a href="https://www.wireguard.com/"><img src="https://img.shields.io/badge/WireGuard-88171A?style=for-the-badge&logo=wireguard&logoColor=white" alt="WireGuard"></a>
+  <a href="../LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue?style=for-the-badge" alt="License GPLv3"></a>
 </p>
 
 Interface web simple pour gérer une barrière via un appareil Android utilisant le protocole ADB.
+
+---
+
+## 📥 Télécharger le code source
+
+Vous pouvez télécharger la dernière версию directement sous forme d'archive ZIP ou cloner le dépôt via Git :
+
+- [📦 **Télécharger l'archive ZIP**](https://github.com/keenmovie/Barrier_ADB_WebUI/archive/refs/heads/main.zip)
+- **Cloner avec Git :**
+  ```bash
+  git clone [https://github.com/keenmovie/Barrier_ADB_WebUI.git](https://github.com/keenmovie/Barrier_ADB_WebUI.git)
+  ```
 
 ---
 
@@ -79,7 +91,10 @@ cd "$(dirname "$0")"
 exec .venv/bin/python -m coreapp.webapp
 ```
 
-Rendre exécutable : `chmod +x start.sh`
+Rendre exécutable :
+```bash
+chmod +x start.sh
+```
 
 ---
 

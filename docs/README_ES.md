@@ -1,7 +1,7 @@
 <p align="center">
   <a href="../README.md">🇬🇧 English</a> •
   <a href="README_RU.md">🇷🇺 Русский</a> •
-  <a href="README_ES.md">🇪🇸 Español</a> •
+  <b>🇪🇸 Español</b> •
   <a href="README_FR.md">🇫🇷 Français</a> •
   <a href="README_DE.md">🇩🇪 Deutsch</a>
 </p>
@@ -9,13 +9,25 @@
 # 🚪 Barrier ADB WebUI
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Android_ADB-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android ADB">
-  <img src="https://img.shields.io/badge/WireGuard-88171A?style=for-the-badge&logo=wireguard&logoColor=white" alt="WireGuard">
-  <img src="https://img.shields.io/badge/License-GPLv3-blue?style=for-the-badge" alt="License GPLv3">
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"></a>
+  <a href="https://developer.android.com/tools/adb"><img src="https://img.shields.io/badge/Android_ADB-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android ADB"></a>
+  <a href="https://www.wireguard.com/"><img src="https://img.shields.io/badge/WireGuard-88171A?style=for-the-badge&logo=wireguard&logoColor=white" alt="WireGuard"></a>
+  <a href="../LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue?style=for-the-badge" alt="License GPLv3"></a>
 </p>
 
 Interfaz web sencilla para gestionar una barrera a través de un dispositivo Android mediante ADB.
+
+---
+
+## 📥 Descargar código fuente
+
+Puede descargar la última версиóп directamente en un archivo ZIP o clonar el repositorio mediante Git:
+
+- [📦 **Descargar archivo ZIP**](https://github.com/keenmovie/Barrier_ADB_WebUI/archive/refs/heads/main.zip)
+- **Clonar con Git:**
+  ```bash
+  git clone [https://github.com/keenmovie/Barrier_ADB_WebUI.git](https://github.com/keenmovie/Barrier_ADB_WebUI.git)
+  ```
 
 ---
 
@@ -79,7 +91,10 @@ cd "$(dirname "$0")"
 exec .venv/bin/python -m coreapp.webapp
 ```
 
-Hacer ejecutable: `chmod +x start.sh`
+Hacer ejecutable:
+```bash
+chmod +x start.sh
+```
 
 ---
 
@@ -131,4 +146,4 @@ adb connect <IP_DEL_TELEFONO>:5555
 ## ⚠️ Exención de responsabilidad
 
 - **Aviso de IA:** Código creado y optimizado con asistencia de IA. Se proporciona "TAL CUAL".
-- **Limitación de responsabilidad:** El autor no asume ninguna responsabilidad por el uso del software (llamadas, control o uso indebido). Ver [DISCLAIMER.md](../DISCLAIMER.md).
+- **Limitación de responsabilidad:** El autor no asume ninguna responsabilidad por el uso del software. Ver [DISCLAIMER.md](../DISCLAIMER.md).

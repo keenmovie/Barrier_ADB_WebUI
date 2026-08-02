@@ -81,6 +81,8 @@ wget [https://git.io/wireguard](https://git.io/wireguard) -O wireguard-install.s
 | `PORT` | Application port | `8090` | No |
 
 ---
+## For change UI settings, start configure_ui.py in folder /scripts
+---
 
 ## 🚀 Startup Script & Systemd Service
 

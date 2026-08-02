@@ -26,7 +26,7 @@ Sie können die neueste Version direkt als ZIP-Archiv herunterladen oder über G
 - [📦 **ZIP-Archiv herunterladen**](https://github.com/keenmovie/Barrier_ADB_WebUI/archive/refs/heads/main.zip)
 - **Mit Git klonen:**
   ```bash
-  git clone [https://github.com/keenmovie/Barrier_ADB_WebUI.git](https://github.com/keenmovie/Barrier_ADB_WebUI.git)
+  git clone https://github.com/keenmovie/Barrier_ADB_WebUI.git
   ```
 
 ---
@@ -80,6 +80,8 @@ wget [https://git.io/wireguard](https://git.io/wireguard) -O wireguard-install.s
 | `HOST` | Server-IP-Adresse | `0.0.0.0` | Nein |
 | `PORT` | Anwendungsport | `8090` | Nein |
 
+---
+## Um die UI-Einstellungen zu ändern, starten Sie configure_ui.py im Ordner /scripts
 ---
 
 ## 🚀 Startskript & Systemd-Dienst

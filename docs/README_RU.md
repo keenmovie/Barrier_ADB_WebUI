@@ -26,7 +26,7 @@
 - [📦 **Скачать ZIP-архив**](https://github.com/keenmovie/Barrier_ADB_WebUI/archive/refs/heads/main.zip)
 - **Клонирование через Git:**
   ```bash
-  git clone [https://github.com/keenmovie/Barrier_ADB_WebUI.git](https://github.com/keenmovie/Barrier_ADB_WebUI.git)
+  git clone https://github.com/keenmovie/Barrier_ADB_WebUI.git
   ```
 
 ---
@@ -79,6 +79,9 @@ wget [https://git.io/wireguard](https://git.io/wireguard) -O wireguard-install.s
 | `BARRIER_PHONE` | Номер телефона для управления шлагбаумом | — | **Да** |
 | `HOST` | IP-адрес сервера | `0.0.0.0` | Нет |
 | `PORT` | Порт приложения | `8090` | Нет |
+
+---
+## Для изменения настроек интерфейса, запустите configure_ui.py в папке /script
 
 ---
 

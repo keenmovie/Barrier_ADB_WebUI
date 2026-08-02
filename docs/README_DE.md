@@ -152,3 +152,15 @@ adb connect <TELEFON_IP>:5555
 
 - **KI-Hinweis:** Code mit KI-Unterstützung erstellt. Bereitstellung erfolgt "WIE ER IST".
 - **Haftungsbeschränkung:** Der Autor übernimmt keine Haftung für die Nutzung der Software. Siehe [DISCLAIMER.md](../DISCLAIMER.md).
+
+---
+
+## 💖 Unterstütze das Projekt
+
+Wenn dir dieses Projekt geholfen hat, kannst du seine Weiterentwicklung unterstützen:
+
+- [☕ **DonationAlerts** ](https://www.donationalerts.com/r/keenmovie)
+
+- 💎 **USDT (TRC-20):** `TTq5LFaCfJiptzPimcJqhADq7HphJn5gzp`
+
+Vielen Dank für deine Unterstützung!

@@ -152,3 +152,15 @@ adb connect <IP_DU_TELEPHONE>:5555
 
 - **Notice IA :** Code créé avec l'aide d'une IA. Fourni "EN L'ÉTAT".
 - **Limitation de responsabilité :** L'auteur décline toute responsabilité quant à l'utilisation du logiciel. Voir [DISCLAIMER.md](../DISCLAIMER.md).
+
+---
+
+## 💖 Soutenez le projet
+
+Si ce projet vous a été utile, vous pouvez soutenir son développement :
+
+- [☕ **DonationAlerts** ](https://www.donationalerts.com/r/keenmovie)
+
+- 💎 **USDT (TRC-20) :** `TTq5LFaCfJiptzPimcJqhADq7HphJn5gzp`
+
+Merci pour votre soutien !

@@ -159,9 +159,8 @@ adb connect <PHONE_IP>:5555
 ## 💖 Support the Project / Поддержать проект
 
 If this project helped you, you can support its development:  
-Если проект оказался вам полезен, вы можете поддержать автора:
 
-- [☕ **DonationAlerts** (Карты РФ / СНГ)](https://www.donationalerts.com/r/keenmovie)
+- [☕ **DonationAlerts** ](https://www.donationalerts.com/r/keenmovie)
 - 💎 **USDT (TRC-20):** `TTq5LFaCfJiptzPimcJqhADq7HphJn5gzp`
 
-Thank you for your support! / Спасибо за вашу поддержку!
+Thank you for your support!
